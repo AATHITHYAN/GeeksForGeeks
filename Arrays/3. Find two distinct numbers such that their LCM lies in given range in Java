@@ -1,0 +1,33 @@
+package Arrays;
+
+public class DistinctLCM 
+{
+	public int calculate(int start, int end)
+	{
+		if((start * 2) <= end)
+		{
+			return start * 2;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+	
+	public void print(int output)
+	{
+		System.out.println(output);
+	}
+	
+	public static void main(String[] args) 
+	{
+		DistinctLCM dl = new DistinctLCM();
+		int start = 88;
+		int end = 90;
+		
+		int result = dl.calculate(start, end);
+		
+		dl.print(result);
+	}
+
+}
