@@ -1,0 +1,38 @@
+package Arrays;
+
+public class MaximizeModulus 
+{
+	public int minimum(int number1, int number2)
+	{
+		return (number1 > number2 ? number2 : number1);
+	}
+	
+	public int calculate(int array[])
+	{
+		int minima = Integer.MAX_VALUE;
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			minima = minimum(array[i], minima);
+		}
+		
+		return minima;
+	}
+	
+	public void print(int output)
+	{
+		System.out.println(output);
+	}
+	
+	public static void main(String[] args) 
+	{
+		MaximizeModulus mm = new MaximizeModulus();
+		
+		int array[] = {7, 10, 12};
+		
+		int result = mm.calculate(array);
+		
+		mm.print(result);
+	}
+
+}
