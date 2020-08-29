@@ -1,0 +1,36 @@
+package Arrays;
+
+public class CountOfPairsEqualToIndex 
+{
+	public int calculate(int array[])
+	{
+		int count = 0;
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			if(i == array[array[i] - 1] - 1)
+			{
+				count++;
+			}
+		}
+		
+		return count / 2;
+	}
+	
+	public void print(int output)
+	{
+		System.out.println(output);
+	}
+	
+	public static void main(String[] args) 
+	{
+		CountOfPairsEqualToIndex copet = new CountOfPairsEqualToIndex();
+		
+		int array[] = {5, 5, 5, 5, 3};
+		
+		int result = copet.calculate(array);
+		
+		copet.print(result);
+	}
+
+}
