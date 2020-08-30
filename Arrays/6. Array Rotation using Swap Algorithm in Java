@@ -1,0 +1,63 @@
+package Arrays;
+
+public class ArrayRotationUsingSwapAlgorithm 
+{
+	public static void calculate(int array[], int d)
+	{
+		int i, j;
+		
+		if(d == 0 || d == array.length)
+		{
+			return;
+		}
+		
+		i = d;
+		j = array.length - d;
+		
+		while(i != j)
+		{
+			if(i < j)
+			{
+				swap(array, d - i, d + j - i, i);
+				j -= i;
+			}
+			else
+			{
+				swap(array, d - i, d, j);
+				i -= j;
+			}
+		}
+	}
+	
+	public static void swap(int array[], int start, int end, int d)
+	{
+		int temp;
+		
+		for(int i = 0; i < d; i++)
+		{
+			temp = array[start + i];
+			array[start + i] = array[end + i];
+			array[end + i] = temp;
+		}
+	}
+	
+	public static void print(int array[])
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			System.out.println(array[i]);
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		int array[] = {1, 2, 3, 4, 5, 6, 7};
+		
+		int d = 2;
+		
+		calculate(array, d);
+		
+		print(array);
+	}
+
+}
